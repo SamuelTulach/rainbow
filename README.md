@@ -35,5 +35,5 @@ load rainbow.efi
 7. Now you should see output from rainbow. If it was successful, exit and boot into Windows (change to Windows boot media - usually FS1 - and run \EFI\Boot\bootx64.efi)
 
 ## Download
-Once published, link will be added here.
+Once published, link to UC will be added here.
 
