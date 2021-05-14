@@ -1,5 +1,6 @@
 # Rainbow
 Rainbow is a bootkit like HWID spoofer for Windows. It abuses several hooks in EFI runtime services and uses clever DKOM to hide hardware serials before any boot-time drivers are even started.
+
 ## Screenshots
 ![screen0](rainbow0.png)
 ![screen1](rainbow1.png)
@@ -36,4 +37,7 @@ load rainbow.efi
 
 ## Download
 [Check out UnknownCheats](https://www.unknowncheats.me/forum/anti-cheat-bypass/452202-rainbow-efi-bootkit-hwid-spoofer-smbios-disk-nic.html).
+
+# Compiling
+See [VisualEfi](https://github.com/ionescu007/VisualUefi). Please note that I've made some changes to the EDK2 directory.
 
