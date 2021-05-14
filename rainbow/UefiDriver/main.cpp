@@ -79,9 +79,9 @@ EFI_STATUS HookedExitBootServices(EFI_HANDLE ImageHandle, UINTN MapKey)
      * BlpArchSwitchContext    -> 000000018002CA48
      */
 
-    /*
-     * Start of OslExecuteTransition
-     */
+     /*
+      * Start of OslExecuteTransition
+      */
     UINT64 loaderBlockScan = Utils::FindPattern(reinterpret_cast<VOID*>(returnAddress), SCAN_MAX, E("48 8B 3D ? ? ? ? 48 8B 8F ? ? ? ?"));
     if (!loaderBlockScan)
     {
@@ -129,7 +129,7 @@ EFI_STATUS HookedExitBootServices(EFI_HANDLE ImageHandle, UINTN MapKey)
         INFINITE_LOOP();
     }
     ContextPrint(EW(L"ntoskrnl.exe              -> (virt) 0x%p\n"), kernelModule.DllBase);
-    
+
     UINT64 loadDriverScan = Utils::FindPatternImage(kernelModule.DllBase, E("E8 ? ? ? ? 33 D2 8B D8 44 8B FA"));
     if (!loadDriverScan)
     {

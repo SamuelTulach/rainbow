@@ -150,15 +150,15 @@ INTN Hooks::HookedIopLoadDriver(VOID* KeyHandle)
      * In our example of disk.sys, we will point it to ClassMpdevInternalDeviceControl
      * which (as I said before) will immediately return and error out.
      * The system will then think there are not drives attached.
-     * 
+     *
      * To actually detect this, you would have to know where the original function
      * is supposed to be pointing or just start kicking people who's dispatch
      * errors out (because it's basically impossible for it to fail in normal conditions).
      */
 
-    /*
-     * Unhook so we can call original
-     */
+     /*
+      * Unhook so we can call original
+      */
     Unhook();
 
     /*

@@ -28,7 +28,6 @@ void Console::ClearScreen()
     gST->ConOut->SetAttribute(gST->ConOut, EFI_WHITE | EFI_BACKGROUND_BLACK);
     gST->ConOut->ClearScreen(gST->ConOut);
     Print(EW(L"\n"));
-
 }
 
 void Console::PrintTitle()

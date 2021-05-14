@@ -2,7 +2,6 @@
 
 namespace crypt
 {
-
 #define TBX_XSTR_SEED ((__TIME__[7] - '0') * 1ull    + (__TIME__[6] - '0') * 10ull  + \
                        (__TIME__[4] - '0') * 60ull   + (__TIME__[3] - '0') * 600ull + \
                        (__TIME__[1] - '0') * 3600ull + (__TIME__[0] - '0') * 36000ull)
@@ -47,9 +46,7 @@ namespace crypt
             string[_nb_chars] = '\0';
             return string;
         }
-
     };
-
 }
 
 #define E(input_string) []{ constexpr crypt::Xor_string<(sizeof(input_string)/sizeof(char)), char> expr(input_string); return expr; }().decrypt()

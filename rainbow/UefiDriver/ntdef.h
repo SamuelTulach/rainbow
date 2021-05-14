@@ -11,7 +11,7 @@ typedef struct _UNICODE_STRING
     UINT16 Length;
     UINT16 MaximumLength;
     CHAR16* Buffer;
-} UNICODE_STRING, *PUNICODE_STRING;
+} UNICODE_STRING, * PUNICODE_STRING;
 
 typedef struct _KLDR_DATA_TABLE_ENTRY
 {
@@ -42,7 +42,7 @@ typedef struct _KLDR_DATA_TABLE_ENTRY
     VOID* Spare;
     UINT32 SizeOfImageNotRounded;
     UINT32 TimeDateStamp;
-} KLDR_DATA_TABLE_ENTRY, *PKLDR_DATA_TABLE_ENTRY;
+} KLDR_DATA_TABLE_ENTRY, * PKLDR_DATA_TABLE_ENTRY;
 
 typedef struct _LOADER_PARAMETER_BLOCK
 {
@@ -57,7 +57,7 @@ typedef struct _LOADER_PARAMETER_BLOCK
     struct _LIST_ENTRY CoreDriverListHead;
     struct _LIST_ENTRY CoreExtensionsDriverListHead;
     struct _LIST_ENTRY TpmCoreDriverListHead;
-} LOADER_PARAMETER_BLOCK, *PLOADER_PARAMETER_BLOCK;
+} LOADER_PARAMETER_BLOCK, * PLOADER_PARAMETER_BLOCK;
 
 #define CONTAINING_RECORD(address, type, field) ((type *)( \
                                                   (char*)(address) - \
@@ -121,7 +121,7 @@ typedef struct _IMAGE_NT_HEADERS64
     UINT32 Signature;
     IMAGE_FILE_HEADER FileHeader;
     IMAGE_OPTIONAL_HEADER64 OptionalHeader;
-} IMAGE_NT_HEADERS64, * PIMAGE_NT_HEADERS64, IMAGE_NT_HEADERS, *PIMAGE_NT_HEADERS;
+} IMAGE_NT_HEADERS64, * PIMAGE_NT_HEADERS64, IMAGE_NT_HEADERS, * PIMAGE_NT_HEADERS;
 
 typedef struct _IMAGE_DOS_HEADER
 {
@@ -200,7 +200,7 @@ typedef struct _IMAGE_EXPORT_DIRECTORY
     UINT32 AddressOfFunctions;
     UINT32 AddressOfNames;
     UINT32 AddressOfNameOrdinals;
-} IMAGE_EXPORT_DIRECTORY, *PIMAGE_EXPORT_DIRECTORY;
+} IMAGE_EXPORT_DIRECTORY, * PIMAGE_EXPORT_DIRECTORY;
 
 typedef enum _MODE
 {
@@ -271,7 +271,7 @@ typedef struct _DRIVER_OBJECT
     VOID(*DriverStartIo)(struct _DEVICE_OBJECT* arg1, struct _IRP* arg2);
     VOID(*DriverUnload)(struct _DRIVER_OBJECT* arg1);
     UINT32(*MajorFunction[28])(struct _DEVICE_OBJECT* arg1, struct _IRP* arg2);
-} DRIVER_OBJECT, *PDRIVER_OBJECT;
+} DRIVER_OBJECT, * PDRIVER_OBJECT;
 
 #define RELATIVE_ADDRESS(address, size) ((VOID*)((UINT8*)(address) + *(INT32*)((UINT8*)(address) + ((size) - (INT32)sizeof(INT32))) + (size)))
 
@@ -290,7 +290,6 @@ typedef struct _NDIS_M_DRIVER_BLOCK
             PDRIVER_OBJECT DriverObject;
         };
     };
-
 } NDIS_M_DRIVER_BLOCK, * PNDIS_M_DRIVER_BLOCK;
 
 typedef union _LARGE_INTEGER
